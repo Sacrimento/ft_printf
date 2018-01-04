@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:45:29 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 18:35:53 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/04 19:09:48 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ int		v_flag(char c)
 	return (0);
 }
 
-int		is_format_v(t_arg arg)
+int		is_format_v(t_arg arg, va_list ap)
 {
 	if (v_att(arg.att) && v_flag(arg.flag) && v_spe(arg.spe))
 	{
+		(void)ap;
 		printf("C'est parti pour le traitement\n");
 		return (1);
 	}

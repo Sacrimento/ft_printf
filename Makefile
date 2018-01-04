@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/04 17:57:39 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/04 19:10:38 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,10 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 
 clean:
 	@rm -rf $(OBJDIR)
+	@make -C libft/ clean
 
 fclean: clean
 	@rm -f $(NAME)
+	@make -C libft/ fclean
 
 re: fclean all
