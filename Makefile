@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/04 19:10:38 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/04 19:40:42 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ LIBFT = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(MKLIB) $(OBJ)
+$(NAME): MKLIB $(OBJ)
 	libtool -static -o $(NAME) $(OBJ) $(LIBFT)
 
-$(MKLIB):
+MKLIB:
 	@make -C libft/
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
