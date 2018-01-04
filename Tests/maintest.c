@@ -1,8 +1,9 @@
-#include <stdio.h>
+#include "../includes/ft_printf.h"
 
 int		main(int argc, char **argv)
 {
-	(void)argv;
-	printf("%#.12.3.5.3.2.1.2d\n", 42);
+	t_arg	arg;
+	arg = get_struct(ft_strdup(argv[1]));
+	printf("%c %d %d %c %c\n", arg.att, arg.width, arg.pre, arg.flag, arg.spe);
 	return (argc);
 }

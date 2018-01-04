@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 14:52:40 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/04 17:05:40 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ typedef struct	s_arg
 	char	flag;
 	char	spe;
 }				t_arg;
+
+t_arg	get_struct(char *str);
 
 #endif

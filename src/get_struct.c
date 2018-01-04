@@ -6,11 +6,11 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 16:37:14 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/04 16:58:21 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		get_att(char *str, t_arg *arg)
 {
