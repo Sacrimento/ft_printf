@@ -6,11 +6,13 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/04 17:11:32 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/04 17:57:39 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_NAME = get_struct.c
+SRC_NAME = get_struct.c \
+			str_controller.c \
+			format_validation.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = ft_printf.h
 
@@ -30,7 +32,7 @@ LIBFT = libft/libft.a
 all: $(NAME)
 
 $(NAME): $(MKLIB) $(OBJ)
-	libtool -static -o $(NAME) $(LIBFT)
+	libtool -static -o $(NAME) $(OBJ) $(LIBFT)
 
 $(MKLIB):
 	@make -C libft/

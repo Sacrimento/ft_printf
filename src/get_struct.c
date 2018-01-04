@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 16:58:21 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/04 18:22:33 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		get_att(char *str, t_arg *arg)
 	int		i;
 
 	i = 0;
+	arg->att = 0;
 	while ((str[i] == '#' || str[i] == '0' || str[i] == '-'
 			|| str[i] == '+' || str[i] == ' ') && str[i])
 		arg->att = str[i++];

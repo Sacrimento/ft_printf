@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   str_controller.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 18:19:11 by abouvero         ###   ########.fr       */
+/*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
+/*   Updated: 2018/01/04 18:45:40 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#include "../includes/ft_printf.h"
 
-# include <stdarg.h>
-# include "../libft/includes/libft.h"
-
-# include <stdio.h>
-
-typedef struct	s_arg
+void 	str_controller(char *str)
 {
-	char	att;
-	int		width;
-	int		pre;
-	char	flag;
-	char	spe;
-}				t_arg;
+	int		i;
+	int		count;
 
-void 	str_controller(char *str);
-t_arg	get_struct(char *str);
-int		v_spe(char c);
-int		is_format_v(t_arg arg);
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		count = 0;
+		if (str[i] == '%')
+		{
+			while (!v_spe(str[i + count]) && str[i + count])
+				count++;
+			is_format_v(get_struct(ft_strsub(str, ++i, count))) ? i += count : 0;
+		}
+		ft_putchar(str[i]);
+		i++;
+	}
+	ft_putstr("\n");
+	ft_strdel(&str);
+}
