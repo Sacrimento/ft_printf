@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:00:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 18:06:48 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/05 19:28:46 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*singlec(char c)
 
 char	*redirect4(t_arg arg, va_list ap)
 {
-	if (arg.spe == 'x')
+	if (arg.spe == 'x' || arg.spe == 'X')
 	{
 		if (arg.flag == 0)
 			return (ft_max_itoa_base((intmax_t)(unsigned int)va_arg(ap, void *), 16));
@@ -41,6 +41,8 @@ char	*redirect4(t_arg arg, va_list ap)
 		else if (arg.flag == 'z')
 			return (ft_max_itoa_base((intmax_t)(size_t)va_arg(ap, void *), 16));
 	}
+	else if (arg.spe == 'D')
+		return (ft_max_itoa_base((intmax_t)(long)va_arg(ap, void *), 10));
 	else
 		return (redirect5(arg, ap));
 	return (NULL);
@@ -65,6 +67,8 @@ char	*redirect3(t_arg arg, va_list ap)
 		else if (arg.flag == 'z')
 			return (ft_max_itoa_base((intmax_t)(size_t)va_arg(ap, void *), 10));
 	}
+	else if (arg.spe == 'U')
+		return (ft_max_itoa_base((intmax_t)(unsigned long)va_arg(ap, void *), 10));
 	else
 		return (redirect4(arg, ap));
 	return (NULL);
@@ -89,6 +93,8 @@ char	*redirect2(t_arg arg, va_list ap)
 		else if (arg.flag == 'z')
 			return (ft_max_itoa_base((intmax_t)(size_t)va_arg(ap, void *), 8));
 	}
+	else if (arg.spe == 'O')
+		return (ft_max_itoa_base((intmax_t)(unsigned long)va_arg(ap, void *), 8));
 	else
 		return (redirect3(arg, ap));
 	return (NULL);

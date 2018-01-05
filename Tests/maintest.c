@@ -26,9 +26,6 @@ int		main(int argc, char **argv)
 	ft_printf("%ld", 2147483648);
 	printf("   %ld\n", 2147483648);
 
-	ft_printf("%u", 2147483648);
-	printf("   %u\n", 2147483648);
-
 	ft_printf("%li", 2147483648);
 	printf("   %li\n", 2147483648);
 
@@ -37,5 +34,11 @@ int		main(int argc, char **argv)
 
 	ft_printf("%ld", -2147483648);
 	printf("   %ld\n", -2147483648);
+
+	ft_printf("%lx", 2147483648);
+	printf("   %lx\n", 2147483648);
+
+	ft_printf("%lX", 42);
+	printf("   %lX\n", 42);
 	return (0);
 }

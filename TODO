@@ -1,13 +1,13 @@
 Remaining flags to do :
 
-s S
-p
-d D
-i
-o O
-u U
-x X
-c C
+//s        S
+//p
+//d //D
+//i
+//o //O
+//u //U
+//x //X
+//c        C
 
 # |||||||||||||||||| attention priorite apparemment
 0
@@ -15,10 +15,10 @@ c C
 -
 ' '
 
-l L
-h H
-j
-z
+//l //L
+//h //H
+//j
+//z
 
 Width
 
