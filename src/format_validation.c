@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:45:29 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 19:55:42 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/05 16:04:28 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,17 @@ int		v_flag(char c)
 	return (0);
 }
 
-void 	traitement(t_arg flags, void *arg)
+/*void 	traitement(t_arg flags, void *arg)
 {
 	printf("Flags : %c %d %d %c %c\n", flags.att, flags.width, flags.pre, flags.flag, flags.spe);
 	printf("Argument : %d", arg);
-}
+}*/
 
 int		is_format_v(t_arg arg, va_list ap)
 {
 	if (v_att(arg.att) && v_flag(arg.flag) && v_spe(arg.spe))
 	{
-		traitement(arg, va_arg(ap, void *));
-		//printf("C'est parti pour le traitement\n");
+		str_converter(arg, ap);
 		return (1);
 	}
 	return (0);

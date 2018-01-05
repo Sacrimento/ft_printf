@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/04 19:48:03 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/05 15:57:32 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void 	str_controller(char *str, va_list ap)
 		ft_putchar(str[i]);
 		i++;
 	}
-	ft_strdel(&str);
+	//ft_strdel(&str);
 }
 
 int		ft_printf(const char *fmt, ...)
