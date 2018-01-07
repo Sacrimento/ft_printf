@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:00:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 19:28:46 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 20:34:28 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*singlec(char c)
+char	*singlec(int c)
 {
 	char	*str;
 
@@ -100,10 +100,27 @@ char	*redirect2(t_arg arg, va_list ap)
 	return (NULL);
 }
 
+char	*null_str(char *s_to_del)
+{
+	char	*s;
+
+	ft_strdel(&s_to_del);
+	s = ft_strnew(6);
+	*(s) = '(';
+	*(s + 1) = 'n';
+	*(s + 2) = 'u';
+	*(s + 3) = 'l';
+	*(s + 4) = 'l';
+	*(s + 5) = ')';
+	*(s + 6) = '\0';
+	return (s);
+}
+
 char	*redirect(t_arg arg, va_list ap)
 {
+	char	*s;
 	if (arg.spe == 's')
-		return (va_arg(ap, void *));
+		return ((s = va_arg(ap, char *)) == NULL ? null_str(s) : ft_strdup(s));
 	else if (arg.spe == 'c')
 		return (singlec((int)va_arg(ap, void *)));
 	else if (arg.spe == 'p')

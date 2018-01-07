@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 18:34:19 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 20:39:14 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ int		str_controller(char *str, va_list ap)
 				count++;
 			is_format_v(get_struct(ft_strsub(str, ++i, count)), ap, &len) ? i += count : 0;
 		}
-		ft_putchar(str[i++]);
+		if (str[i])
+			ft_putchar(str[i++]);
 		len++;
 	}
 	ft_strdel(&str);
-	return (len);
+	return (len - 1);
 }
 
 int		ft_printf(const char *fmt, ...)
@@ -41,6 +42,8 @@ int		ft_printf(const char *fmt, ...)
 	va_list		ap;
 	int			len;
 
+	if (fmt == NULL)
+		return (-1);
 	va_start(ap, fmt);
 	len = str_controller(ft_strdup((char*)fmt), ap);
 	va_end(ap);

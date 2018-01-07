@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:35:50 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 17:08:48 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 19:21:49 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ char	*precision(char *str, t_arg arg)
 {
 	char	*new_s;
 	char	*zero_s;
+
+	if (arg.pre == 0)
+	{
+		ft_bzero((void*)str, ft_strlen(str));
+		return (str);
+	}
 	if (arg.spe == 's' && arg.pre < (int)ft_strlen(str))
 		str[arg.pre] = '\0'; // May leak
 	else if (arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'o' ||

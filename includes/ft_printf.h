@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 18:35:16 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 18:51:24 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct	s_arg
 	int		pre;
 	char	flag;
 	char	spe;
-	int		type;
 }				t_arg;
 
 int		ft_printf(const char *fmt, ...);
