@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 19:05:47 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 18:35:16 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ typedef struct	s_arg
 int		ft_printf(const char *fmt, ...);
 t_arg	get_struct(char *str);
 int		v_spe(char c);
-int		is_format_v(t_arg arg, va_list ap);
-void 	str_converter(t_arg arg, va_list ap);
-void 	str_controller(char *str, va_list ap);
+int		is_format_v(t_arg arg, va_list ap, int *len);
+void 	str_converter(t_arg arg, va_list ap, int *len);
+int		str_controller(char *str, va_list ap);
 char	*redirect(t_arg arg, va_list ap);
 char	*redirect5(t_arg arg, va_list ap);
+char	*width(char *s, t_arg arg);
+char	*precision(char *s, t_arg arg);
+char	*flags(char *s, t_arg arg);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/05 18:04:27 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/07 18:05:39 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ SRC_NAME = get_struct.c \
 			format_validation.c \
 			str_converter.c \
 			redirectL.c \
-			redirectU.c
+			unicode.c \
+			width.c \
+			precision.c \
+			flags.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = ft_printf.h
 

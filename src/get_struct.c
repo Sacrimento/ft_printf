@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/05 15:55:54 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/07 16:41:12 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		get_pre(char *str, t_arg *arg)
 	char	*save;
 
 	i = 0;
-	arg->pre = 1;
+	arg->pre = 0;
 	while (str[i] == '.' || ft_isdigit(str[i]))
 	{
 		if (str[i] == '.')
