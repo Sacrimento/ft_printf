@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 13:24:43 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 17:04:45 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF
 
 # include <stdarg.h>
+# include <limits.h>
 # include "../libft/includes/libft.h"
 
 # include <stdio.h>

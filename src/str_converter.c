@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 15:39:31 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 17:11:28 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void 	str_converter(t_arg arg, va_list ap, int *len)
 	s = flags(s, arg);
 	s = width(s, arg);
 	reverse_width(s);
-	//*len += arg.spe == 's' ? ft_strlen(s) + 1 : ft_strlen(s);
 	*len += ft_strlen(s);
 	ft_putstr(s);
 	ft_strdel(&s);

@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 16:16:17 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 16:26:16 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,12 @@ t_arg	get_struct(char *str)
 	i += get_pre(&str[i], &arg);
 	i += get_flag(&str[i], &arg);
 	arg.spe = str[i];
+	if (arg.spe == '%')
+	{
+		arg.pre = -1;
+		arg.att.sign = 0;
+		arg.att.diese = 0;
+	}
 	ft_strdel(&str);
 	return (arg);
 }

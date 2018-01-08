@@ -42,9 +42,8 @@ int		main(int argc, char **argv)
 	// printf("   %lX\n", 42);
 	// write(1, &test, 1);
 
-
-	printf("Lui %%\n");
-	ft_printf("Moi %%\n");
+	// printf("Lui %%\n");
+	// ft_printf("Moi %%\n");
 
 
 	// ft_printf("moi @moulitest: %#.o %#.0o\n", 0, 0);
