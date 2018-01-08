@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 15:48:05 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 16:20:01 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		str_controller(char *str, va_list ap)
 	len = 0;
 	while (str[i])
 	{
-		count = 0;
+		count = 1;
 		if (str[i] == '%')
 		{
 			while (!v_spe(str[i + count]) && str[i + count])

@@ -1,25 +1,5 @@
 #include "../includes/ft_printf.h"
 
-void 	reverse_width(char *s)
-{
-	int		i;
-
-	i = 0;
-	while (s[i] == '0' || s[i] == ' ')
-		i++;
-	if (s[i] == '-' && i > 0)
-	{
-		s[i] = s[i - 1];
-		s[0] = '-';
-	}
-	else if (s[i] == '+' && i > 0)
-	{
-		s[i] = s[i - 1];
-		s[0] = '+';
-	}
-	printf("%s\n", s);
-}
-
 int		main(int argc, char **argv)
 {
 	(void)argv;
@@ -62,11 +42,11 @@ int		main(int argc, char **argv)
 	// printf("   %lX\n", 42);
 	// write(1, &test, 1);
 
-	reverse_width(ft_strdup("000000-42"));
+
+	printf("Lui %%\n");
+	ft_printf("Moi %%\n");
 
 
-	// printf("%50c\n", 0);
-	//ft_printf("%#-+25x\n", 42);
 	// ft_printf("moi @moulitest: %#.o %#.0o\n", 0, 0);
 	// printf("lui @moulitest: %#.o %#.0o\n", 0, 0);
 	// ft_putnbr(printf("%.50d\n", 2147483647));

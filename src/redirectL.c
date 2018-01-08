@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:00:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 20:34:28 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 15:55:55 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ char	*redirect2(t_arg arg, va_list ap)
 	}
 	else if (arg.spe == 'O')
 		return (ft_max_itoa_base((intmax_t)(unsigned long)va_arg(ap, void *), 8));
+	else if (arg.spe == '%')
+		return (singlec('%'));
 	else
 		return (redirect3(arg, ap));
 	return (NULL);
