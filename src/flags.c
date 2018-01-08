@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 17:26:16 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 13:36:26 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:34:29 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 char	*space_flag(char *s)
 {
 	char	*new_s;
+	if (s[0] == '-')
+		return (s);
 	new_s = ft_strjoin(" ", s);
 	ft_strdel(&s);
 	return (new_s);

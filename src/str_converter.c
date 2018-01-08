@@ -6,11 +6,30 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 20:44:42 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 15:34:25 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+void 	reverse_width(char *s)
+{
+	int		i;
+
+	i = 0;
+	while (s[i] == '0')
+		i++;
+	if (s[i] == '-')
+	{
+		s[i] = s[i - 1];
+		s[0] = '-';
+	}
+	else if (s[i] == '+')
+	{
+		s[i] = s[i - 1];
+		s[0] = '+';
+	}
+}
 
 void 	str_converter(t_arg arg, va_list ap, int *len)
 {
@@ -20,6 +39,7 @@ void 	str_converter(t_arg arg, va_list ap, int *len)
 	s = precision(s, arg);
 	s = flags(s, arg);
 	s = width(s, arg);
+	reverse_width(s);
 	//*len += arg.spe == 's' ? ft_strlen(s) + 1 : ft_strlen(s);
 	*len += ft_strlen(s);
 	ft_putstr(s);
