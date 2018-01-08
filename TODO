@@ -20,10 +20,14 @@ Remaining flags to do :
 //j
 //z
 
-Width
+//Width
 
-Precision
+//Precision
 
 return len
 
 exceptions
+
+Double structure attribut
+
+Parsing (i++ a eviter sinon %s%s%s%s faux)

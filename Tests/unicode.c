@@ -65,6 +65,8 @@ int				ft_putwchar(unsigned int c)
 	unsigned char	byte;
 	int		i = -8;
 	char	*save;
+	// while (c /= 2)
+		// i++
 
 	if ((size = get_encoding_size(c)) == -1)
 		return (-1);
@@ -81,7 +83,7 @@ int				ft_putwchar(unsigned int c)
 		write (1, &byte, 1);
 		ft_strdel(&save);
 	}
-	ft_strdel(&maskS);
+	.ft_strdel(&maskS);
 	return (0);
 }
 

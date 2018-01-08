@@ -6,25 +6,28 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 18:51:24 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 13:24:43 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF
 # define FT_PRINTF
 
-# define VCHAR 1
-# define VINT  2
-# define VSTR  3
-
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
 
 # include <stdio.h>
 
+typedef struct	s_att
+{
+	char	sign;
+	char	width_modi;
+	int		diese;
+}				t_att;
+
 typedef struct	s_arg
 {
-	char	att;
+	t_att	att;
 	int		width;
 	int		pre;
 	char	flag;

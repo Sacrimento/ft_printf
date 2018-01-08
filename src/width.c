@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:53:42 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 18:15:41 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 13:35:18 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ char	*width(char *s, t_arg arg)
 
 	if (arg.width > (int)ft_strlen(s))
 	{
-		width_s = create_width(arg.att, arg.width - (int)ft_strlen(s));
-		new_s = arg.att != '-' ? ft_strjoin(width_s, s) : ft_strjoin(s, width_s);
+		width_s = create_width(arg.att.width_modi,
+												arg.width - (int)ft_strlen(s));
+		new_s = arg.att.width_modi != '-' ?
+								ft_strjoin(width_s, s) : ft_strjoin(s, width_s);
 		ft_strdel(&s);
 		ft_strdel(&width_s);
 		s = new_s;

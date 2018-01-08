@@ -41,8 +41,11 @@ int		main(int argc, char **argv)
 	// ft_printf("%lX", 42);
 	// printf("   %lX\n", 42);
 
-	ft_printf("moi @moulitest: %#.o %#.0o\n", 0, 0);
-	printf("lui @moulitest: %#.o %#.0o\n", 0, 0);
+
+	printf("%#-+25x\n", 42);
+	ft_printf("%#-+25x\n", 42);
+	// ft_printf("moi @moulitest: %#.o %#.0o\n", 0, 0);
+	// printf("lui @moulitest: %#.o %#.0o\n", 0, 0);
 	// ft_putnbr(printf("%.50d\n", 2147483647));
 	// ft_putnbr(ft_printf("%.50d\n", 2147483647));
 	return (0);

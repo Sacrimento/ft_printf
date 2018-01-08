@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 17:26:16 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/07 19:52:01 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/08 13:36:26 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ char	*diese_flag(char *s, t_arg arg)
 
 char	*flags(char *s, t_arg arg)
 {
-	s = (arg.att == '#' || arg.spe == 'p') ? diese_flag(s, arg) : s;
-	if (arg.att == '+' && (arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'D'))
+	s = (arg.att.diese || arg.spe == 'p') ? diese_flag(s, arg) : s;
+	if (arg.att.sign == '+' && (arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'D'))
 		s = plus_flag(s);
-	s = arg.att == ' ' ? space_flag(s) : s;
+	s = arg.att.sign == ' ' ? space_flag(s) : s;
 	return (s);
 }
