@@ -1,33 +1,7 @@
-Remaining flags to do :
+Flags :
+S
+C
 
-//s        S
-//p
-//d //D
-//i
-//o //O
-//u //U
-//x //X
-//c        C
+Refaire %c
 
-# |||||||||||||||||| attention priorite apparemment
-0
-+
--
-' '
-
-//l //L
-//h //H
-//j
-//z
-
-//Width
-
-//Precision
-
-return len
-
-exceptions
-
-Double structure attribut
-
-Parsing (i++ a eviter sinon %s%s%s%s faux)
+Precision 0 avec d  et o
