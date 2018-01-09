@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:00:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 19:07:17 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/09 11:00:45 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*redirect4(t_arg arg, va_list ap)
 	else if (arg.spe == 'D')
 		return (ft_max_itoa_base((intmax_t)(long)va_arg(ap, void *), 10));
 	else
-		return (redirect5(arg, ap));
+		return (NULL);
 	return (NULL);
 }
 
@@ -123,8 +123,8 @@ char	*redirect(t_arg arg, va_list ap)
 	char	*s;
 	if (arg.spe == 's')
 		return ((s = va_arg(ap, char *)) == NULL ? null_str(s) : ft_strdup(s));
-	else if (arg.spe == 'c')
-		return (singlec((int)va_arg(ap, void *)));
+	// else if (arg.spe == 'c')
+	// 	return (singlec((int)va_arg(ap, void *)));
 	else if (arg.spe == 'p')
 		return (ft_max_itoa_base((intmax_t)(unsigned long)va_arg(ap, void *), 16));
 	else if (arg.spe == 'i' || arg.spe == 'd')

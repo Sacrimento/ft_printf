@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:35:50 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 19:59:45 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:48:17 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*precision(char *str, t_arg arg)
 	int		sign;
 
 	sign = (str[0] == '+' || str[0] == '-') ? 1 : 0;
-	if (arg.pre == 0)
+	if ((arg.pre == 0 && arg.spe != 'd') || (arg.pre == 0 && arg.spe == 'd' && *str == '0'))
 	{
 		ft_bzero((void*)str, ft_strlen(str));
 		return (str);
@@ -41,15 +41,15 @@ char	*precision(char *str, t_arg arg)
 		str[arg.pre] = '\0'; // May leak
 	else if (arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'o' ||
 				arg.spe == 'u' || arg.spe == 'x' || arg.spe == 'X')
+	{
+		if (arg.pre > (int)ft_strlen(str) - sign)
 		{
-			if (arg.pre > (int)ft_strlen(str) - sign)
-			{
-				zero_s = create_0str(arg.pre - (ft_strlen(str) - sign));
-				new_s = ft_strjoin(zero_s, str);
-				ft_strdel(&str);
-				ft_strdel(&zero_s);
-				str = new_s;
-			}
+			zero_s = create_0str(arg.pre - (ft_strlen(str) - sign));
+			new_s = ft_strjoin(zero_s, str);
+			ft_strdel(&str);
+			ft_strdel(&zero_s);
+			str = new_s;
 		}
+	}
 	return (str);
 }

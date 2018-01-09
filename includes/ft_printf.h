@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/08 17:04:45 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:08:09 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF
 
 # include <stdarg.h>
-# include <limits.h>
 # include "../libft/includes/libft.h"
 
 # include <stdio.h>
@@ -46,5 +45,7 @@ char	*redirect5(t_arg arg, va_list ap);
 char	*width(char *s, t_arg arg);
 char	*precision(char *s, t_arg arg);
 char	*flags(char *s, t_arg arg);
+char	*create_width(char c, int size);
+void 	c_conv(int *len, t_arg arg, va_list ap);
 
 #endif

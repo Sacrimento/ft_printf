@@ -42,9 +42,10 @@ int		main(int argc, char **argv)
 	// printf("   %lX\n", 42);
 	// write(1, &test, 1);
 
-	ft_printf("Moi %03.2d\n", -1);
-	printf("Lui %03.2d\n", -1);
-
+	// ft_printf("Moi %03.2d\n", -1);
+	printf("strjoin %s\n", ft_strjoin("0", "\0"));
+	printf("Unix [%#.o]\n", 0);
+	ft_printf("42   [%#.o]\n", 0);
 	// ft_printf("moi @moulitest: %#.o %#.0o\n", 0, 0);
 	// printf("lui @moulitest: %#.o %#.0o\n", 0, 0);
 	// ft_putnbr(printf("%.50d\n", 2147483647));
