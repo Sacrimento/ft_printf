@@ -1,8 +1,16 @@
-#include <stdio.h>
-#include <locale.h>
-#include <wchar.h>
-#include <unistd.h>
-#include "../libft/includes/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putwchar.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/01/09 15:08:37 by abouvero          #+#    #+#             */
+/*   Updated: 2018/01/09 15:16:44 by abouvero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/ft_printf.h"
 
 unsigned long	get_mask(int size)
 {
@@ -38,7 +46,6 @@ int				get_encoding_size(unsigned int c)
 
 char			*fill_bin_to_mask(char *bin, char *mask)
 {
-	int		size;
 	int		i;
 	int		len_bin = ft_strlen(bin);
 	int		len_mask = ft_strlen(mask);
@@ -54,8 +61,6 @@ char			*fill_bin_to_mask(char *bin, char *mask)
 	return (mask);
 }
 
-int			ft_atoi_base(const char *str, int base);
-
 int				ft_putwchar(unsigned int c)
 {
 
@@ -65,13 +70,13 @@ int				ft_putwchar(unsigned int c)
 	unsigned char	byte;
 	int		i = -8;
 	char	*save;
-	// while (c /= 2)
-		// i++
+	int		len;
 
 	if ((size = get_encoding_size(c)) == -1)
 		return (-1);
 	else if (size == 1)
 		return (write(1, &c, 1));
+	len = size;
 	maskS = ft_max_itoa_base((intmax_t)get_mask(size), 2);
 	nbS = ft_max_itoa_base((intmax_t)c, 2);
 	fill_bin_to_mask(nbS, maskS);
@@ -83,28 +88,6 @@ int				ft_putwchar(unsigned int c)
 		write (1, &byte, 1);
 		ft_strdel(&save);
 	}
-	.ft_strdel(&maskS);
-	return (0);
-}
-
-int		main(void)
-{
-	int c = 0;
-	char* l = setlocale(LC_ALL, "");
-	if (l == NULL) {
-		printf("Locale not set\n");
-	} else {
-		printf("Locale set to %s\n", l);
-	}
-	while (c < 4096)
-		ft_putwchar(c++);
-
-	// printf("%C\n", 945);
-	//printf("%C\n", L'µ');
-	// ft_putwchar(945);
-	//ft_putwchar(L'ڇ');
-	// printf("%s\n", fill_bin_to_mask(strdup("2222222"), strdup("1110000010000000")));
-	//ft_putwchar(L'Á');
-
-	return 0;
+	ft_strdel(&maskS);
+	return (len);
 }

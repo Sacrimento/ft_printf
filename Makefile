@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/09 12:53:41 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/09 15:25:19 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_NAME = get_struct.c \
 			c_conv.c \
 			width.c \
 			precision.c \
-			flags.c
+			flags.c 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = ft_printf.h
 

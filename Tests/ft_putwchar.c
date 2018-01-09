@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 13:01:26 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/09 14:57:53 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/09 15:06:02 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int 	ft_putwchar(unsigned int c)
 	else if (size == -1)
 		return (-1);
 	mask = get_mask(size);
-	byte = 192 + (c >> size * 6 | mask >> (size - 1) * 6);
+	byte = 192 + (c >> size * 6 | mask >> (size) * 6);
 	printf("PRINTFFFF %d", byte);
 	write(1, &byte, 1);
 	while (size-- > 0)
@@ -79,6 +79,6 @@ int		main(void)
 	} else {
 		printf("Locale set to %s\n", l);
 	}
-	ft_putwchar(L'ɰ');
+	ft_putwchar(L'ǐ');
 	return (0);
 }

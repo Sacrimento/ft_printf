@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 17:26:16 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/09 12:22:51 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/09 17:28:02 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char	*diese_flag(char *s, t_arg arg)
 {
 	char	*new_s;
 
-	if (arg.spe != 'o' && (s[0] == '0' || !s[0]))
+	if ((arg.spe == 'x' || arg.spe == 'X') && (s[0] == '0' || !s[0]))
 		return (s);
-	if (arg.spe == 'o')
+	if (arg.spe == 'o' && s[0] != '0')
 		new_s = ft_strjoin("0", s);
 	else if (arg.spe == 'x' || arg.spe == 'p')
 		new_s = ft_strjoin("0x", s);
