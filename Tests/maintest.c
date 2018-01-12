@@ -43,11 +43,13 @@ int		main(int argc, char **argv)
 	// write(1, &test, 1);
 
 	// ft_printf("Moi %03.2d\n", -1);
-	   printf("Unix [%#x] [%#X] [%#055.0o] [%p]\n", 0, 0, 0, 0);
-	ft_printf("42   [%#x] [%#X] [%#055.0o] [%p]\n", 0, 0, 0, 0);
-	// ft_printf("moi @moulitest: %#.o %#.0o\n", 0, 0);
-	// printf("lui @moulitest: %#.o %#.0o\n", 0, 0);
-	// ft_putnbr(printf("%.50d\n", 2147483647));
+	   // printf("Unix [% Zoooo]\n");
+	   #include <locale.h>
+	   setlocale(LC_ALL,"");
+	int i1 =ft_printf("% o|%+o", 42, 42);
+	int i2 = printf("% o|%+o", 42, 42);
+	ft_printf("\n[%d][%d]",i1,i2);
+		// ft_putnbr(printf("%.50d\n", 2147483647));
 	// ft_putnbr(ft_printf("%.50d\n", 2147483647));
 	return (0);
 }

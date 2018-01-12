@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/09 15:23:17 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/12 16:56:12 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void 	str_converter(t_arg arg, va_list ap, int *len)
 
 	if (arg.spe == 'c' || arg.spe == 'C')
 		c_conv(len, arg, ap);
+	else if (arg.spe == 'S' || (arg.spe == 's' && arg.flag == 'l'))
+		wide_str(len, arg, (wchar_t *)va_arg(ap, void *));
 	else
 	{
 		s = (arg.spe == 'X') ? ft_strtoupper(redirect(arg, ap)) : redirect(arg, ap);

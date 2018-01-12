@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/09 15:21:06 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/12 16:55:52 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char	*precision(char *s, t_arg arg);
 char	*flags(char *s, t_arg arg);
 char	*create_width(char c, int size);
 void 	c_conv(int *len, t_arg arg, va_list ap);
+void 	wide_str(int *len, t_arg arg, wchar_t *s);
 
 #endif
