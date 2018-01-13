@@ -65,8 +65,16 @@ int		main(int argc, char **argv)
 	// printf("LUI RET : %d\n", printf("{%-30S}\n", L"我是一只猫。"));
 	// printf("MOI RET : %d\n", ft_printf("{%-30S}\n", L"我是一只猫。"));
 
-	printf("Unix : {%#.5x}\n", 1); fflush(stdout);
-	ft_printf("42   : {%#.5x}\n", 1);
+	printf("Unix : {%0-3d}\n", 0); fflush(stdout);
+	ft_printf("42   : {%0-3d}\n", 0);
+
+	printf("Unix : %15.4d\n", -42); fflush(stdout);
+	ft_printf("42   : %15.4d\n", -42);
+
+	printf("Unix : %#.o\n", 42); fflush(stdout);
+	ft_printf("42   : %#.o\n", 42);
+
+	//printf("Test : %*.*d", -32,-10, 10);
 
 	// printf("--------------------------\n");
     //
