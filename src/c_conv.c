@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:03:01 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/12 18:28:35 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/13 15:17:27 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void 	wide_str(int *len, t_arg arg, wchar_t *s)
 	while (i < pre)
 		*len += ft_putwchar(s[i++]);
 	(arg.att.width_modi == '-' && arg.width > byte_len) ? ft_putstr(width) : 0;
+	*len += arg.width > byte_len ? ft_strlen(width) : 0;
 	arg.width > byte_len ? ft_strdel(&width) : 0;
 }
 

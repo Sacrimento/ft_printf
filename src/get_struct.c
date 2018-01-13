@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/09 17:11:14 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/13 15:37:41 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		get_att(char *str, t_arg *arg)
 			arg->att.diese = 1;
 		i++;
 	}
-
 	return (i);
 }
 
@@ -71,8 +70,6 @@ int		get_pre(char *str, t_arg *arg)
 	}
 	else if (i && str[i - 1] == '.')
 		arg->pre = 0;
-	if (arg->pre != -1 && arg->att.width_modi == '0')
-		arg->att.width_modi = 0;
 	return (i);
 }
 
@@ -118,8 +115,12 @@ t_arg	get_struct(char *str)
 		arg.att.sign = 0;
 		arg.att.diese = 0;
 	}
-	if (arg.spe == 'u')
+	if (arg.spe == 'u' || arg.spe == 'o' || arg.spe == 'x' || arg.spe == 'O'
+											|| arg.spe == 'X' || arg.spe == 'p')
 		arg.att.sign = 0;
+	if (arg.pre != -1 && arg.att.width_modi == '0' && arg.spe != 'c' && arg.spe
+									 != 's' && arg.spe != 'S' && arg.spe != 'C')
+		arg.att.width_modi = 0;
 	ft_strdel(&str);
 	return (arg);
 }

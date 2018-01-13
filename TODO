@@ -1,7 +1,7 @@
-Flags :
-S
-C
+%C = wint_t !!
 
-Refaire %c
+printf("Unix : {%0-3d}\n", 0); fflush(stdout);
+ft_printf("42   : {%0-3d}\n", 0);
 
-Precision 0 avec d  et o
+printf("Unix : %15.4d\n", -42); fflush(stdout);
+ft_printf("42   : %15.4d\n", -42);

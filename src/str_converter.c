@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/12 16:56:12 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/13 16:47:55 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,19 @@
 void 	reverse_width(char *s)
 {
 	int		i;
+	char	c;
 
 	i = 0;
 	while (s[i] == '0')
 		i++;
-	if (s[i] == '-')
+	c = s[i];
+	if (c == '-' || c == '+' || c == ' ' || c == 'x' || c == 'X')
 	{
 		s[i] = s[i - 1];
-		s[0] = '-';
-	}
-	else if (s[i] == '+')
-	{
-		s[i] = s[i - 1];
-		s[0] = '+';
-	}
-	else if (s[i] == 'x')
-	{
-		s[i] = s[i - 1];
-		s[1] = 'x';
-	}
-	else if (s[i] == 'X')
-	{
-		s[i] = s[i - 1];
-		s[1] = 'X';
+		if (c == 'x' || c == 'X')
+			s[1] = c;
+		else
+			s[0] = c;
 	}
 }
 
@@ -52,6 +42,7 @@ void 	str_converter(t_arg arg, va_list ap, int *len)
 	else
 	{
 		s = (arg.spe == 'X') ? ft_strtoupper(redirect(arg, ap)) : redirect(arg, ap);
+		(*s == '0' && (arg.spe == 'x' || arg.spe == 'X')) ? arg.att.diese = 0 : 0;
 		s = precision(s, arg);
 		s = flags(s, arg);
 		s = width(s, arg);
