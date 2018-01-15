@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:45:29 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:44:55 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:10:14 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		v_spe(char c)
 {
 	if (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' || c == 'i' ||
 			c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'x' || c == 'X'
-			|| c == 'c' || c == 'C' || c == '%' || c == 'b')
+			|| c == 'c' || c == 'C' || c == '%')
 		return (1);
 	return (0);
 }
@@ -33,7 +33,7 @@ int		v_att(t_att att)
 int		v_flag(char c)
 {
 	if (c == 'l' || c == 'L' || c == 'h' || c == 'H' || c == 'j' || c == 'z' ||
-			c == 0)
+			c == 0 || c == 'a')
 		return (1);
 	return (0);
 }

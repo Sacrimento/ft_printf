@@ -102,10 +102,6 @@ int		main(int argc, char **argv)
 //   ft_printf("%s%s\n", "test", "test");
 //   ft_printf("%s%s%s\n", "test", "test", "test");
 //   ft_printf("%C\n", 15000);
-#include <string.h>
-#include <stdint.h>
-#include <time.h>
-#include <limits.h>
  int i = 2147483647;
  long l = 2147483647;
  long long ll = 9223372036854775807;
@@ -143,9 +139,9 @@ ft_printf("a%db%dc%dd",
 ft_printf("%d", INT_MAX);
 ft_printf("%d", INT_MIN);
 */
-#include <limits.h>
+ft_printf("%.3as", ft_strsplit("loli,lola,lolu,lalala", ','));
 
-ft_printf("111%s333%s555%saaa%sccc%jb","222", "444", "666", "bbb", INT_MAXT);
+
 	// printf("--------------------------\n");
     //
 	// printf("Unix : [%#.o]\n", 42); fflush(stdout);

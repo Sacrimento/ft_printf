@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 15:21:58 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:44:35 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:22:35 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,39 @@ char	*null_str(void)
 	return (s);
 }
 
+void	print_array(t_arg arg, va_list ap)
+{
+	int		i;
+	char	**sarray;
+	int		*darray;
+
+	i = 0;
+	if (arg.spe == 'd')
+	{
+		darray = va_arg(ap, int *);
+		while (i < arg.pre)
+			ft_printf("[%d]", darray[i++]);
+	}
+	else
+	{
+		sarray = va_arg(ap, char **);
+		while (i < arg.pre && sarray[i])
+			ft_printf("[%s]", sarray[i++]);
+	}
+	ft_printf("\n");
+}
+
+char	*redirect6(t_arg arg, va_list ap)
+{
+	if (arg.flag == 'a')
+	{
+		if ((arg.spe == 'd' || arg.spe == 's') && arg.pre > 0)
+			print_array(arg, ap);
+		return (ft_strdup(""));
+	}
+	return (NULL);
+}
+
 char	*redirect5(t_arg arg, va_list ap)
 {
 	if (arg.spe == 'b')
@@ -57,5 +90,7 @@ char	*redirect5(t_arg arg, va_list ap)
 		else if (arg.flag == 'z')
 			return (ft_umax_itoa_base((size_t)va_arg(ap, void *), 2));
 	}
+	else
+		return (redirect6(arg, ap));
 	return (NULL);
 }

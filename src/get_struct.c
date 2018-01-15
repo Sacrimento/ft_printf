@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:10:07 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:09:49 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int		get_flag(char *str, t_arg *arg)
 
 	i = 0;
 	arg->flag = 0;
-	while (str[i] == 'l' || str[i] == 'h' || str[i] == 'j' || str[i] == 'z')
+	while (str[i] == 'l' || str[i] == 'h' || str[i] == 'j' || str[i] == 'z' ||
+																str[i] == 'a')
 	{
 		if (str[i] == 'l' && str[i + 1] == 'l')
 		{

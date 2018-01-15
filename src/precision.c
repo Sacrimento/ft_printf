@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:35:50 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:11:12 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:14:14 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*precision(char *str, t_arg arg)
 		str[arg.pre == -1 ? ft_strlen(str) + 1 : arg.pre] = '\0';
 	else if ((arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'o' || arg.spe ==
 	'p' || arg.spe == 'u' || arg.spe == 'x' || arg.spe == 'X' || arg.spe == 'O')
-									&& (arg.pre > (int)ft_strlen(str) - sign))
+				&& (arg.pre > (int)ft_strlen(str) - sign) && arg.flag != 'a')
 	{
 		zero_s = create_0str(arg.pre - (ft_strlen(str) - sign));
 		new_s = ft_strjoin(zero_s, str);
