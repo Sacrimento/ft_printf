@@ -149,16 +149,8 @@ ft_printf("%d", INT_MIN);
 	// ft_putnbr(printf("%.50d\n", 2147483647));
 	// ft_putnbr(ft_printf("%.50d\n", 2147483647));
 
-printf("{%.*d}", -5, 42);
+printf("{red}Salut {white}salut je {yellow}m'amuse trop\n");
 
-	printf("{%3*d}\n", 0, 0);
-	ft_printf("{%3*d}\n", 0, 0);
-	printf("{%*3d}\n", 0, 0);
-	ft_printf("{%*3d}\n", 0, 0);
-	printf("{%*3d}\n", 5, 0);
-	ft_printf("{%*3d}\n", 5, 0);
-	printf("KK{%05.*d}\n", -15, 42);
-	ft_printf("PP{%05.*d}\n", -15, 42);
 
 	//ft_printf("[%*p]\n", 10, 0);
 
