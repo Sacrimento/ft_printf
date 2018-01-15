@@ -9,3 +9,14 @@ ft_printf("42   : {%0-3d}\n", 0);
 
 printf("Unix : %15.4d\n", -42); fflush(stdout);
 ft_printf("42   : %15.4d\n", -42);
+
+-----------------------------------------
+
+norme
+
+----------------------------------------
+
+bonus : * width et pre
+%a*d et %a*c (afficher tab int/char*)
+couleurs
+%b

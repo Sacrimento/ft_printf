@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/13 18:08:25 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 11:59:03 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ void 	str_converter(t_arg arg, va_list ap, int *len)
 		s = (arg.spe == 'X') ? ft_strtoupper(redirect(arg, ap)) : redirect(arg, ap);
 		(*s == '0' && (arg.spe == 'x' || arg.spe == 'X')) ? arg.att.diese = 0 : 0;
 		s = precision(s, arg);
+		reverse_width(s);
 		s = flags(s, arg);
 		s = width(s, arg);
-		reverse_width(s);
+		arg.width != 0 && arg.att.width_modi == '0'? reverse_width(s) : 0;
 		*len += ft_strlen(s);
 		ft_putstr(s);
 		//ft_strdel(&s);
