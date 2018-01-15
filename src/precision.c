@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:35:50 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/13 18:17:27 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 14:41:43 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*precision(char *str, t_arg arg)
 		return (str);
 	}
 	if (arg.spe == 's' && arg.pre < (int)ft_strlen(str))
-		str[arg.pre] = '\0'; // May leak
+		str[arg.pre == -1 ? ft_strlen(str) + 1 : arg.pre] = '\0'; // May leak
 	else if (arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'o' || arg.spe == 'p'
 	|| arg.spe == 'u' || arg.spe == 'x' || arg.spe == 'X' || arg.spe == 'O')
 	{
@@ -50,7 +50,7 @@ char	*precision(char *str, t_arg arg)
 			new_s = ft_strjoin(zero_s, str);
 			ft_strdel(&str);
 			ft_strdel(&zero_s);
-			str = new_s;
+			return (new_s);
 		}
 	}
 	return (str);

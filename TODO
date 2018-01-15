@@ -1,14 +1,6 @@
 %C = wint_t !!
 
-Leaks !!!!!!!!!!!!!!!!!
-
 Generaliser les exceptions
-
-printf("Unix : {%0-3d}\n", 0); fflush(stdout);
-ft_printf("42   : {%0-3d}\n", 0);
-
-printf("Unix : %15.4d\n", -42); fflush(stdout);
-ft_printf("42   : %15.4d\n", -42);
 
 -----------------------------------------
 

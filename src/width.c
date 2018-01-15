@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:53:42 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/13 15:10:59 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 13:30:50 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*width(char *s, t_arg arg)
 								ft_strjoin(width_s, s) : ft_strjoin(s, width_s);
 		ft_strdel(&s);
 		ft_strdel(&width_s);
-		s = new_s;
+		return (new_s);
 	}
 	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/12 16:55:52 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 12:45:57 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_att
 	char	sign;
 	char	width_modi;
 	int		diese;
+	char	padding[3];
 }				t_att;
 
 typedef struct	s_arg
@@ -32,6 +33,7 @@ typedef struct	s_arg
 	int		pre;
 	char	flag;
 	char	spe;
+	char	padding[2];
 }				t_arg;
 
 int		ft_printf(const char *fmt, ...);
@@ -50,3 +52,5 @@ void 	c_conv(int *len, t_arg arg, va_list ap);
 void 	wide_str(int *len, t_arg arg, wchar_t *s);
 
 #endif
+
+
