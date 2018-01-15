@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 15:21:58 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:26:51 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:44:35 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,23 @@ char	*null_str(void)
 
 char	*redirect5(t_arg arg, va_list ap)
 {
-	(void)arg;
-	(void)ap;
+	if (arg.spe == 'b')
+	{
+		if (arg.flag == 0)
+			return (ft_umax_itoa_base((unsigned int)va_arg(ap, void *), 2));
+		else if (arg.flag == 'l')
+			return (ft_umax_itoa_base((unsigned long)va_arg(ap, void *), 2));
+		else if (arg.flag == 'L')
+			return (ft_umax_itoa_base((unsigned long long)va_arg(ap, void *),
+																			2));
+		else if (arg.flag == 'h')
+			return (ft_umax_itoa_base((unsigned short)va_arg(ap, void *), 2));
+		else if (arg.flag == 'H')
+			return (ft_umax_itoa_base((unsigned char)va_arg(ap, void *), 2));
+		else if (arg.flag == 'j')
+			return (ft_umax_itoa_base((uintmax_t)va_arg(ap, void *), 2));
+		else if (arg.flag == 'z')
+			return (ft_umax_itoa_base((size_t)va_arg(ap, void *), 2));
+	}
 	return (NULL);
 }

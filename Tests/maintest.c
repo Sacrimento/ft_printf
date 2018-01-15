@@ -143,7 +143,9 @@ ft_printf("a%db%dc%dd",
 ft_printf("%d", INT_MAX);
 ft_printf("%d", INT_MIN);
 */
-ft_printf("111%s333%s555%saaa%sccc","222", "444", "666", "bbb");
+#include <limits.h>
+
+ft_printf("111%s333%s555%saaa%sccc%jb","222", "444", "666", "bbb", INT_MAXT);
 	// printf("--------------------------\n");
     //
 	// printf("Unix : [%#.o]\n", 42); fflush(stdout);
