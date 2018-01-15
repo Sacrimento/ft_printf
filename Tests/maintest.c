@@ -1,5 +1,6 @@
 #include <locale.h>
 #include "../includes/ft_printf.h"
+#include <stdio.h>
 
 int		main(int argc, char **argv)
 {
@@ -102,11 +103,6 @@ int		main(int argc, char **argv)
 //   ft_printf("%s%s\n", "test", "test");
 //   ft_printf("%s%s%s\n", "test", "test", "test");
 //   ft_printf("%C\n", 15000);
- int i = 2147483647;
- long l = 2147483647;
- long long ll = 9223372036854775807;
- char c = 0;
- intmax_t im = 9223372036854775807;
 /*
   ft_printf("\n");
   ft_printf("%%\n");
@@ -139,7 +135,7 @@ ft_printf("a%db%dc%dd",
 ft_printf("%d", INT_MAX);
 ft_printf("%d", INT_MIN);
 */
-ft_printf("%.3as", ft_strsplit("loli,lola,lolu,lalala", ','));
+//ft_printf("%.3as", ft_strsplit("loli,lola,lolu,lalala", ','));
 
 
 	// printf("--------------------------\n");
@@ -152,5 +148,19 @@ ft_printf("%.3as", ft_strsplit("loli,lola,lolu,lalala", ','));
 	// printf("lui @moulitest: %#.o %#.0o\n", 0, 0);
 	// ft_putnbr(printf("%.50d\n", 2147483647));
 	// ft_putnbr(ft_printf("%.50d\n", 2147483647));
+
+printf("{%.*d}", -5, 42);
+
+	printf("{%3*d}\n", 0, 0);
+	ft_printf("{%3*d}\n", 0, 0);
+	printf("{%*3d}\n", 0, 0);
+	ft_printf("{%*3d}\n", 0, 0);
+	printf("{%*3d}\n", 5, 0);
+	ft_printf("{%*3d}\n", 5, 0);
+	printf("KK{%05.*d}\n", -15, 42);
+	ft_printf("PP{%05.*d}\n", -15, 42);
+
+	//ft_printf("[%*p]\n", 10, 0);
+
 	return (0);
 }

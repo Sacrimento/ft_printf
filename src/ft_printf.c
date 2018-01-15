@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:01:11 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:45:17 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		str_controller(char *str, va_list ap)
 		{
 			while (!v_spe(str[i + count]) && str[i + count])
 				count++;
-			is_format_v(get_struct(ft_strsub(str, ++i, count)), ap, &len)
+			is_format_v(get_struct(ft_strsub(str, ++i, count), ap), ap, &len)
 															? i += count : 0;
 		}
 		if (str[i] && str[i] != '%')

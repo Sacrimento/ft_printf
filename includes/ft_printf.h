@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:23:52 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:50:14 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct	s_arg
 }				t_arg;
 
 int				ft_printf(const char *fmt, ...);
-t_arg			get_struct(char *str);
+t_arg			get_struct(char *str, va_list ap);
 int				v_spe(char c);
 int				is_format_v(t_arg arg, va_list ap, int *len);
 void			str_converter(t_arg arg, va_list ap, int *len);
