@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/15 12:10:12 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/15 15:25:02 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,12 @@ SRC_NAME = get_struct.c \
 			ft_printf.c \
 			format_validation.c \
 			str_converter.c \
-			redirectL.c \
+			redirect.c \
 			c_conv.c \
 			width.c \
 			precision.c \
-			flags.c
+			flags.c \
+			redirect_comp.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = ft_printf.h
 
@@ -27,7 +28,7 @@ INCDIR = ./includes/
 SRCDIR = ./src/
 
 NAME = libftprintf.a
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra
 
 SRC = $(addprefix $(SRCDIR), $(SRC_NAME))
 INC = $(addprefix $(INCDIR), $(INC_NAME))

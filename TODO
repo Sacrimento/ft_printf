@@ -1,12 +1,6 @@
-%C = wint_t !!
-
 Generaliser les exceptions
 
 -----------------------------------------
-
-norme
-
-----------------------------------------
 
 bonus : * width et pre
 %a*d et %a*c (afficher tab int/char*)

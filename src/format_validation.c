@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:45:29 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/09 18:36:06 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:00:59 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int		v_spe(char c)
 int		v_att(t_att att)
 {
 	if ((att.sign == 0 || att.sign == '+' || att.sign == ' ')
-					&& (att.width_modi == 0 || att.width_modi == '0' ||
-					att.width_modi == '-') && (att.diese == 0 || att.diese == 1))
+				&& (att.width_modi == 0 || att.width_modi == '0' ||
+				att.width_modi == '-') && (att.diese == 0 || att.diese == 1))
 		return (1);
 	return (0);
 }

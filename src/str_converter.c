@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 13:51:15 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:10:18 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void 	reverse_width(char *s)
+void	reverse_width(char *s)
 {
 	int		i;
 	char	c;
@@ -31,7 +31,7 @@ void 	reverse_width(char *s)
 	}
 }
 
-void 	str_converter(t_arg arg, va_list ap, int *len)
+void	str_converter(t_arg arg, va_list ap, int *len)
 {
 	char	*s;
 
@@ -41,13 +41,15 @@ void 	str_converter(t_arg arg, va_list ap, int *len)
 		wide_str(len, arg, (wchar_t *)va_arg(ap, void *));
 	else
 	{
-		s = (arg.spe == 'X') ? ft_strtoupper(redirect(arg, ap)) : redirect(arg, ap);
-		(*s == '0' && (arg.spe == 'x' || arg.spe == 'X')) ? arg.att.diese = 0 : 0;
+		s = (arg.spe == 'X') ? ft_strtoupper(redirect(arg, ap)) :
+															redirect(arg, ap);
+		(*s == '0' && (arg.spe == 'x' || arg.spe == 'X')) ?
+														arg.att.diese = 0 : 0;
 		s = precision(s, arg);
 		reverse_width(s);
 		s = flags(s, arg);
 		s = width(s, arg);
-		arg.width != 0 && arg.att.width_modi == '0'? reverse_width(s) : 0;
+		arg.width != 0 && arg.att.width_modi == '0' ? reverse_width(s) : 0;
 		*len += ft_strlen(s);
 		ft_putstr(s);
 		ft_strdel(&s);

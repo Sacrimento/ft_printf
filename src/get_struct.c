@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/13 15:37:41 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:10:07 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ int		get_att(char *str, t_arg *arg)
 	while ((str[i] == '#' || str[i] == '0' || str[i] == '-'
 								|| str[i] == '+' || str[i] == ' ') && str[i])
 	{
-		if ((str[i] == ' ' && arg->att.sign == 0) || (str[i] == '+' && (arg->att.sign == 0 || arg->att.sign == ' ')))
+		if ((str[i] == ' ' && arg->att.sign == 0) || (str[i] == '+' &&
+								(arg->att.sign == 0 || arg->att.sign == ' ')))
 			arg->att.sign = str[i];
-		else if ((str[i] == '0' && arg->att.width_modi == 0) || (str[i] == '-' && (arg->att.width_modi == 0 || arg->att.width_modi == '0')))
+		else if ((str[i] == '0' && arg->att.width_modi == 0) || (str[i] == '-'
+				&& (arg->att.width_modi == 0 || arg->att.width_modi == '0')))
 			arg->att.width_modi = str[i];
 		else if (str[i] == '#')
 			arg->att.diese = 1;
@@ -119,7 +121,7 @@ t_arg	get_struct(char *str)
 											|| arg.spe == 'X' || arg.spe == 'p')
 		arg.att.sign = 0;
 	if (arg.pre != -1 && arg.att.width_modi == '0' && arg.spe != 'c' && arg.spe
-									 != 's' && arg.spe != 'S' && arg.spe != 'C')
+									!= 's' && arg.spe != 'S' && arg.spe != 'C')
 		arg.att.width_modi = 0;
 	ft_strdel(&str);
 	return (arg);

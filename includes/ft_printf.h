@@ -6,24 +6,21 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 12:45:57 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:23:52 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
-
-# include <stdio.h>
 
 typedef struct	s_att
 {
 	char	sign;
 	char	width_modi;
 	int		diese;
-	char	padding[3];
 }				t_att;
 
 typedef struct	s_arg
@@ -33,24 +30,23 @@ typedef struct	s_arg
 	int		pre;
 	char	flag;
 	char	spe;
-	char	padding[2];
 }				t_arg;
 
-int		ft_printf(const char *fmt, ...);
-t_arg	get_struct(char *str);
-int		v_spe(char c);
-int		is_format_v(t_arg arg, va_list ap, int *len);
-void 	str_converter(t_arg arg, va_list ap, int *len);
-int		str_controller(char *str, va_list ap);
-char	*redirect(t_arg arg, va_list ap);
-char	*redirect5(t_arg arg, va_list ap);
-char	*width(char *s, t_arg arg);
-char	*precision(char *s, t_arg arg);
-char	*flags(char *s, t_arg arg);
-char	*create_width(char c, int size);
-void 	c_conv(int *len, t_arg arg, va_list ap);
-void 	wide_str(int *len, t_arg arg, wchar_t *s);
+int				ft_printf(const char *fmt, ...);
+t_arg			get_struct(char *str);
+int				v_spe(char c);
+int				is_format_v(t_arg arg, va_list ap, int *len);
+void			str_converter(t_arg arg, va_list ap, int *len);
+int				str_controller(char *str, va_list ap);
+char			*redirect(t_arg arg, va_list ap);
+char			*redirect5(t_arg arg, va_list ap);
+char			*width(char *s, t_arg arg);
+char			*precision(char *s, t_arg arg);
+char			*flags(char *s, t_arg arg);
+char			*create_width(char c, int size);
+void			c_conv(int *len, t_arg arg, va_list ap);
+void			wide_str(int *len, t_arg arg, wchar_t *s);
+char			*null_str(void);
+char			*singlec(int c);
 
 #endif
-
-

@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 17:26:16 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/13 18:55:11 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 14:59:11 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*space_flag(char *s)
 {
 	char	*new_s;
+
 	if (s[0] == '-')
 		return (s);
 	new_s = ft_strjoin(" ", s);
@@ -25,6 +26,7 @@ char	*space_flag(char *s)
 char	*plus_flag(char *s)
 {
 	char	*new_s;
+
 	if (s[0] != '-' && s[0] != '+')
 	{
 		new_s = ft_strjoin("+", s);
@@ -37,6 +39,7 @@ char	*plus_flag(char *s)
 char	*diese_flag(char *s, t_arg arg)
 {
 	char	*new_s;
+
 	if ((arg.spe == 'o' || arg.spe == 'O') && s[0] != '0')
 		new_s = ft_strjoin("0", s);
 	else if (arg.spe == 'x' || arg.spe == 'p')
@@ -52,8 +55,10 @@ char	*diese_flag(char *s, t_arg arg)
 char	*flags(char *s, t_arg arg)
 {
 	s = (arg.att.diese || arg.spe == 'p') ? diese_flag(s, arg) : s;
-	if (arg.att.sign == '+' && (arg.spe == 'd' || arg.spe == 'i' || arg.spe == 'D'))
+	if (arg.att.sign == '+' && (arg.spe == 'd' ||
+											arg.spe == 'i' || arg.spe == 'D'))
 		s = plus_flag(s);
-	s = (arg.att.sign == ' ' && (arg.spe != 's' && arg.spe != 'S')) ? space_flag(s) : s;
+	s = (arg.att.sign == ' ' && (arg.spe != 's' && arg.spe != 'S'))
+															? space_flag(s) : s;
 	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:03:01 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/13 15:17:27 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:00:26 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int				byte_length(int pre, wchar_t *s)
 	return (size);
 }
 
-int		wide_pre(t_arg arg, wchar_t *s)
+int				wide_pre(t_arg arg, wchar_t *s)
 {
 	int		total_size;
 	int		i;
@@ -62,7 +62,7 @@ int		wide_pre(t_arg arg, wchar_t *s)
 	return (i);
 }
 
-void 	wide_str(int *len, t_arg arg, wchar_t *s)
+void			wide_str(int *len, t_arg arg, wchar_t *s)
 {
 	int		i;
 	char	*width;
@@ -88,7 +88,7 @@ void 	wide_str(int *len, t_arg arg, wchar_t *s)
 	arg.width > byte_len ? ft_strdel(&width) : 0;
 }
 
-void 	c_conv(int *len, t_arg arg, va_list ap)
+void			c_conv(int *len, t_arg arg, va_list ap)
 {
 	char	*s;
 
