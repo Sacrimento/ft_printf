@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/16 11:40:03 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 12:04:06 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int		str_controller(char *str, va_list ap)
 		}
 		else if (str[i] == '<')
 			i += colorise(&(str[i]));
-		if (str[i] && str[i] != '%' && str[i] != '<' && (len++))
+		if (str[i] && str[i] != '%' && str[i] != '<' && (++len))
 			ft_putchar(str[i++]);
 	}
 	ft_strdel(&str);
