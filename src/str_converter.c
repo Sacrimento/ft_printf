@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 12:43:43 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:10:18 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:46:45 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	reverse_width(char *s)
+static void		reverse_width(char *s)
 {
 	int		i;
 	char	c;
@@ -31,7 +31,7 @@ void	reverse_width(char *s)
 	}
 }
 
-void	str_converter(t_arg arg, va_list ap, int *len)
+void			str_converter(t_arg arg, va_list ap, int *len)
 {
 	char	*s;
 

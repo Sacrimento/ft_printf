@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/16 11:26:17 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:47:04 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_arg			get_struct(char *str, va_list ap);
 int				v_spe(char c);
 int				is_format_v(t_arg arg, va_list ap, int *len);
 void			str_converter(t_arg arg, va_list ap, int *len);
-int				str_controller(char *str, va_list ap);
 char			*redirect(t_arg arg, va_list ap);
 char			*redirect5(t_arg arg, va_list ap);
 char			*width(char *s, t_arg arg);
