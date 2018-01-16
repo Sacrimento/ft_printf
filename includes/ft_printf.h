@@ -6,7 +6,7 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 11:51:48 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 19:20:28 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:26:17 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void			c_conv(int *len, t_arg arg, va_list ap);
 void			wide_str(int *len, t_arg arg, wchar_t *s);
 char			*null_str(void);
 char			*singlec(int c);
+int				colorise(char *str);
 
 #endif

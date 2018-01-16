@@ -149,7 +149,7 @@ ft_printf("%d", INT_MIN);
 	// ft_putnbr(printf("%.50d\n", 2147483647));
 	// ft_putnbr(ft_printf("%.50d\n", 2147483647));
 
-printf("{red}Salut {white}salut je {yellow}m'amuse trop\n");
+ft_printf("{redfgfgfg}Salut {wht}salut je {bred} {yel}m'amuse{eoc} trop\n");
 
 
 	//ft_printf("[%*p]\n", 10, 0);
