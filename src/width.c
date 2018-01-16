@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:53:42 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/16 11:42:33 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:49:44 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static char		*create_width(char c, int size)
+char			*create_width(char c, int size)
 {
 	int		i;
 	char	*s;
