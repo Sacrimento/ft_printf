@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 10:29:46 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/16 11:26:37 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:35:12 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static void 	free_char_array(char **tab)
+static void		free_char_array(char **tab)
 {
 	int		i;
 
@@ -54,7 +54,7 @@ int				colorise(char *str)
 	int		i;
 
 	i = -1;
-	colors = ft_strsplit("blk:red:grn:yel:blu:mag:cya:wht:void:void:bblk:bred:
+	colors = ft_strsplit("blk:red:grn:yel:blu:mag:cya:wht:void:void:bblk:bred:\
 									bgrn:byel:bblu:bmag:bcya:bwht:eoc", ':');
 	while (str[++i] && i < 6)
 	{
