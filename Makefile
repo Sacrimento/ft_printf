@@ -6,7 +6,7 @@
 #    By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/04 12:19:58 by abouvero          #+#    #+#              #
-#    Updated: 2018/01/16 10:43:09 by abouvero         ###   ########.fr        #
+#    Updated: 2018/01/16 12:18:38 by abouvero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ MKLIB:
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(OBJDIR)
-	gcc -o $@ -c $< $(FLAGS)
+	gcc -o $@ -c $< $(FLAGS) -I $(INC)
 
 clean:
 	@rm -rf $(OBJDIR)
