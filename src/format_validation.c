@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:45:29 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 16:10:14 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:39:52 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		v_spe(char c)
+int				v_spe(char c)
 {
 	if (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' || c == 'i' ||
 			c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'x' || c == 'X'
@@ -21,7 +21,7 @@ int		v_spe(char c)
 	return (0);
 }
 
-int		v_att(t_att att)
+static int		v_att(t_att att)
 {
 	if ((att.sign == 0 || att.sign == '+' || att.sign == ' ')
 				&& (att.width_modi == 0 || att.width_modi == '0' ||
@@ -30,7 +30,7 @@ int		v_att(t_att att)
 	return (0);
 }
 
-int		v_flag(char c)
+static int		v_flag(char c)
 {
 	if (c == 'l' || c == 'L' || c == 'h' || c == 'H' || c == 'j' || c == 'z' ||
 			c == 0 || c == 'a')
@@ -38,7 +38,7 @@ int		v_flag(char c)
 	return (0);
 }
 
-int		is_format_v(t_arg arg, va_list ap, int *len)
+int				is_format_v(t_arg arg, va_list ap, int *len)
 {
 	if (v_att(arg.att) && v_flag(arg.flag) && v_spe(arg.spe))
 	{

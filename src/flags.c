@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 17:26:16 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 14:59:11 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:43:05 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*space_flag(char *s)
+static char		*space_flag(char *s)
 {
 	char	*new_s;
 
@@ -23,7 +23,7 @@ char	*space_flag(char *s)
 	return (new_s);
 }
 
-char	*plus_flag(char *s)
+static char		*plus_flag(char *s)
 {
 	char	*new_s;
 
@@ -36,7 +36,7 @@ char	*plus_flag(char *s)
 	return (s);
 }
 
-char	*diese_flag(char *s, t_arg arg)
+static char		*diese_flag(char *s, t_arg arg)
 {
 	char	*new_s;
 
@@ -52,7 +52,7 @@ char	*diese_flag(char *s, t_arg arg)
 	return (new_s);
 }
 
-char	*flags(char *s, t_arg arg)
+char			*flags(char *s, t_arg arg)
 {
 	s = (arg.att.diese || arg.spe == 'p') ? diese_flag(s, arg) : s;
 	if (arg.att.sign == '+' && (arg.spe == 'd' ||

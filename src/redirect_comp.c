@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 15:21:58 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 16:22:35 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:43:37 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*singlec(int c)
+char			*singlec(int c)
 {
 	char	*str;
 
@@ -22,7 +22,7 @@ char	*singlec(int c)
 	return (str);
 }
 
-char	*null_str(void)
+char			*null_str(void)
 {
 	char	*s;
 
@@ -37,7 +37,7 @@ char	*null_str(void)
 	return (s);
 }
 
-void	print_array(t_arg arg, va_list ap)
+void			print_array(t_arg arg, va_list ap)
 {
 	int		i;
 	char	**sarray;
@@ -59,7 +59,7 @@ void	print_array(t_arg arg, va_list ap)
 	ft_printf("\n");
 }
 
-char	*redirect6(t_arg arg, va_list ap)
+static char		*redirect6(t_arg arg, va_list ap)
 {
 	if (arg.flag == 'a')
 	{
@@ -70,7 +70,7 @@ char	*redirect6(t_arg arg, va_list ap)
 	return (NULL);
 }
 
-char	*redirect5(t_arg arg, va_list ap)
+char			*redirect5(t_arg arg, va_list ap)
 {
 	if (arg.spe == 'b')
 	{

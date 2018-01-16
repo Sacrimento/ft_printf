@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 16:37:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 18:20:13 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:43:16 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		get_att(char *str, t_arg *arg)
+static int		get_att(char *str, t_arg *arg)
 {
 	int		i;
 
@@ -36,7 +36,7 @@ int		get_att(char *str, t_arg *arg)
 	return (i);
 }
 
-int		get_width(char *str, t_arg *arg, va_list ap)
+static int		get_width(char *str, t_arg *arg, va_list ap)
 {
 	int		i;
 	char	*save;
@@ -63,7 +63,7 @@ int		get_width(char *str, t_arg *arg, va_list ap)
 	return (i);
 }
 
-int		get_pre(char *str, t_arg *arg, va_list ap)
+static int		get_pre(char *str, t_arg *arg, va_list ap)
 {
 	int		i;
 	int		count;
@@ -91,7 +91,7 @@ int		get_pre(char *str, t_arg *arg, va_list ap)
 	return (i);
 }
 
-int		get_flag(char *str, t_arg *arg)
+static int		get_flag(char *str, t_arg *arg)
 {
 	int		i;
 
@@ -117,7 +117,7 @@ int		get_flag(char *str, t_arg *arg)
 	return (i);
 }
 
-t_arg	get_struct(char *str, va_list ap)
+t_arg			get_struct(char *str, va_list ap)
 {
 	t_arg	arg;
 	int		i;

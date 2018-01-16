@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:35:50 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 16:14:14 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:40:43 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*create_0str(int size)
+static char		*create_0str(int size)
 {
 	int		i;
 	char	*s;
@@ -25,7 +25,7 @@ char	*create_0str(int size)
 	return (s);
 }
 
-char	*precision(char *str, t_arg arg)
+char			*precision(char *str, t_arg arg)
 {
 	char	*new_s;
 	char	*zero_s;

@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 17:20:10 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/16 11:27:28 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:40:03 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		str_controller(char *str, va_list ap)
+static int		str_controller(char *str, va_list ap)
 {
 	int		i;
 	int		count;
@@ -39,7 +39,7 @@ int		str_controller(char *str, va_list ap)
 	return (len);
 }
 
-int		ft_printf(const char *fmt, ...)
+int				ft_printf(const char *fmt, ...)
 {
 	va_list		ap;
 	int			len;

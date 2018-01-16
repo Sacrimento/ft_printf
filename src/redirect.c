@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:00:12 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 16:10:52 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:43:53 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*redirect4(t_arg arg, va_list ap)
+static char		*redirect4(t_arg arg, va_list ap)
 {
 	if (arg.spe == 'x' || arg.spe == 'X')
 	{
@@ -39,7 +39,7 @@ char	*redirect4(t_arg arg, va_list ap)
 	return (NULL);
 }
 
-char	*redirect3(t_arg arg, va_list ap)
+static char		*redirect3(t_arg arg, va_list ap)
 {
 	if (arg.spe == 'u')
 	{
@@ -66,7 +66,7 @@ char	*redirect3(t_arg arg, va_list ap)
 	return (NULL);
 }
 
-char	*redirect2(t_arg arg, va_list ap)
+static char		*redirect2(t_arg arg, va_list ap)
 {
 	if (arg.spe == 'o')
 	{
@@ -95,7 +95,7 @@ char	*redirect2(t_arg arg, va_list ap)
 	return (NULL);
 }
 
-char	*redirect(t_arg arg, va_list ap)
+char			*redirect(t_arg arg, va_list ap)
 {
 	char	*s;
 

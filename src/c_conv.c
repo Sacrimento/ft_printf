@@ -6,13 +6,13 @@
 /*   By: abouvero <abouvero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 18:03:01 by abouvero          #+#    #+#             */
-/*   Updated: 2018/01/15 15:00:26 by abouvero         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:42:58 by abouvero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int				encoding_size(unsigned int c)
+static int			encoding_size(unsigned int c)
 {
 	if (c <= 0x7f)
 		return (1);
@@ -30,7 +30,7 @@ int				encoding_size(unsigned int c)
 		return (-1);
 }
 
-int				byte_length(int pre, wchar_t *s)
+static int			byte_length(int pre, wchar_t *s)
 {
 	int		size;
 	int		i;
@@ -45,7 +45,7 @@ int				byte_length(int pre, wchar_t *s)
 	return (size);
 }
 
-int				wide_pre(t_arg arg, wchar_t *s)
+static int			wide_pre(t_arg arg, wchar_t *s)
 {
 	int		total_size;
 	int		i;
@@ -62,7 +62,7 @@ int				wide_pre(t_arg arg, wchar_t *s)
 	return (i);
 }
 
-void			wide_str(int *len, t_arg arg, wchar_t *s)
+void				wide_str(int *len, t_arg arg, wchar_t *s)
 {
 	int		i;
 	char	*width;
@@ -88,7 +88,7 @@ void			wide_str(int *len, t_arg arg, wchar_t *s)
 	arg.width > byte_len ? ft_strdel(&width) : 0;
 }
 
-void			c_conv(int *len, t_arg arg, va_list ap)
+void				c_conv(int *len, t_arg arg, va_list ap)
 {
 	char	*s;
 
